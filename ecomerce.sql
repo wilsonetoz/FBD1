@@ -106,7 +106,7 @@ CREATE TABLE Avaliacao (
 );
 
 -- INSERÇÃO DE DADOS (DML)
--- Categorias diversas
+-- Categorias
 INSERT INTO Categoria (Nome) VALUES
 ('Eletrônicos'),
 ('Roupas'),
@@ -184,6 +184,7 @@ INSERT INTO Cliente (Nome, Email, Telefone, Senha) VALUES
 ('Alice Oliveira', 'alice.oliveira3@email.com', '111111147', 'plokij'),
 ('Davi Rodrigues', 'davi.rodrigues3@email.com', '111111148', 'qazwsx'),
 ('Melissa Lima', 'melissa.lima3@email.com', '111111149', 'edcrfv');
+
 -- Inserções na tabela Endereco
 INSERT INTO Endereco (Rua, Numero, Bairro, Cidade, Estado, Cep, Complemento) VALUES
 ('Rua das Flores', '101', 'Centro', 'São Paulo', 'SP', '01000-000', 'Casa'),
@@ -257,16 +258,16 @@ INSERT INTO Produto (Nome, Descricao, Preco, Estoque, ID_Categoria, ID_Promocao)
 ('Quebra-Cabeça', 'Brinquedo educativo', 45.00, 25, 8, 8),
 ('Óleo de Motor', 'Lubrificante sintético', 70.00, 60, 9, 9),
 ('Ração Cães', 'Ração premium 15kg', 150.00, 30, 10, 10),
-('Smart TV 50"', 'TV 4K com SmartV', 2500.00, 20, 1), -- Eletrônicos
-('Calça Jeans Masculina', 'Jeans slim fit', 120.00, 40, 2), -- Roupas
-('Feijão Carioca 1kg', 'Feijão tipo 1', 8.50, 150, 3), -- Alimentos
-('O Poder do Hábito', 'Livro sobre formação de hábitos', 65.00, 30, 4), -- Livros
-('Máscara Facial Hidratante', 'Com extrato de aloe vera', 45.00, 25, 5), -- Beleza
-('Bola de Basquete', 'Tamanho oficial', 90.00, 10, 6), -- Esportes
-('Mesa de Centro', 'Mesa de madeira maciça', 350.00, 8, 7), -- Casa
-('Carrinho de Controle Remoto', 'Para crianças 5+', 180.00, 15, 8), -- Brinquedos
-('Pneu Aro 15', 'Para carros de passeio', 280.00, 50, 9), -- Automotivo
-('Coleira Anti-pulgas Cães', 'Para cães de pequeno porte', 55.00, 30, 10), -- Petshop
+('Smart TV 50"', 'TV 4K com SmartV', 2500.00, 20, 1), 
+('Calça Jeans Masculina', 'Jeans slim fit', 120.00, 40, 2), 
+('Feijão Carioca 1kg', 'Feijão tipo 1', 8.50, 150, 3), 
+('O Poder do Hábito', 'Livro sobre formação de hábitos', 65.00, 30, 4),
+('Máscara Facial Hidratante', 'Com extrato de aloe vera', 45.00, 25, 5),
+('Bola de Basquete', 'Tamanho oficial', 90.00, 10, 6),
+('Mesa de Centro', 'Mesa de madeira maciça', 350.00, 8, 7), 
+('Carrinho de Controle Remoto', 'Para crianças 5+', 180.00, 15, 8), 
+('Pneu Aro 15', 'Para carros de passeio', 280.00, 50, 9), 
+('Coleira Anti-pulgas Cães', 'Para cães de pequeno porte', 55.00, 30, 10), 
 ('Fone de Ouvido Bluetooth', 'Com cancelamento de ruído', 300.00, 35, 1),
 ('Blusa de Lã Feminina', 'Quente e confortável', 95.00, 50, 2),
 ('Macarrão Parafuso 500g', 'Massa de sêmola', 4.00, 200, 3),
@@ -363,47 +364,47 @@ INSERT INTO ItemPedido (ID_Pedido, ID_Produto, Quantidade, Preco_Unitario, Preco
 (8, 8, 2, 45.00, 90.00),
 (9, 9, 1, 70.00, 70.00),
 (10, 10, 1, 150.00, 150.00),
-(11, 11, 1, 2500.00, 2500.00), -- Smart TV 50"
-(12, 12, 2, 120.00, 240.00),  -- Calça Jeans Masculina
-(13, 13, 5, 8.50, 42.50),     -- Feijão Carioca 1kg
-(14, 14, 1, 65.00, 65.00),    -- O Poder do Hábito
-(15, 15, 1, 45.00, 45.00),    -- Máscara Facial Hidratante
-(16, 16, 1, 90.00, 90.00),    -- Bola de Basquete
-(17, 17, 1, 350.00, 350.00),  -- Mesa de Centro
-(18, 18, 1, 180.00, 180.00),  -- Carrinho de Controle Remoto
-(19, 19, 2, 280.00, 560.00),  -- Pneu Aro 15
-(20, 20, 3, 55.00, 165.00),   -- Coleira Anti-pulgas Cães
-(21, 21, 1, 300.00, 300.00),  -- Fone de Ouvido Bluetooth
-(22, 22, 1, 95.00, 95.00),    -- Blusa de Lã Feminina
-(23, 23, 4, 4.00, 16.00),     -- Macarrão Parafuso 500g
-(24, 24, 1, 80.00, 80.00),    -- Clean Code
-(25, 25, 2, 28.00, 56.00),    -- Shampoo Anticaspa 400ml
-(26, 26, 1, 250.00, 250.00),  -- Raquete de Tênis
-(27, 27, 1, 150.00, 150.00),  -- Luminária de Chão
-(28, 28, 1, 110.00, 110.00),  -- Boneca Interativa
-(29, 29, 1, 30.00, 30.00),    -- Fluido de Freio DOT4
-(30, 30, 2, 38.00, 76.00),    -- Areia Higiênica Gatos 4kg
-(31, 31, 1, 700.00, 700.00),  -- Câmera Digital
-(32, 32, 1, 85.00, 85.00),    -- Saia Plissada
-(33, 33, 2, 40.00, 80.00),    -- Azeite Extra Virgem 500ml
-(34, 34, 1, 48.00, 48.00),    -- Pense e Enriqueça
-(35, 35, 1, 190.00, 190.00),  -- Kit Maquiagem Completo
-(36, 36, 3, 25.00, 75.00),    -- Corda de Pular
-(37, 37, 1, 280.00, 280.00),  -- Conjunto de Panelas 5PÇS
-(38, 38, 1, 90.00, 90.00),    -- Jogo de Tabuleiro
-(39, 39, 1, 130.00, 130.00),  -- Capa de Carro
-(40, 40, 1, 100.00, 100.00),  -- Comedouro Automático Pet
-(41, 41, 1, 1400.00, 1400.00),-- Monitor Gamer 27"
-(42, 42, 1, 450.00, 450.00),  -- Terno Masculino Slim
-(43, 43, 2, 18.00, 36.00),    -- Café Torrado e Moído 500g
-(44, 44, 1, 30.00, 30.00),    -- 1984
-(45, 45, 1, 220.00, 220.00),  -- Perfume Feminino 50ml
-(46, 46, 1, 400.00, 400.00),  -- Halteres Ajustáveis
-(47, 47, 1, 900.00, 900.00),  -- Aspirador de Pó Robô
-(48, 48, 1, 380.00, 380.00),  -- Lego Castelo
-(49, 49, 1, 350.00, 350.00),  -- Bateria Automotiva 60Ah
+(11, 11, 1, 2500.00, 2500.00), 
+(12, 12, 2, 120.00, 240.00), 
+(13, 13, 5, 8.50, 42.50),  
+(14, 14, 1, 65.00, 65.00), 
+(15, 15, 1, 45.00, 45.00),    
+(16, 16, 1, 90.00, 90.00),    
+(17, 17, 1, 350.00, 350.00),  
+(18, 18, 1, 180.00, 180.00),  
+(19, 19, 2, 280.00, 560.00),  
+(20, 20, 3, 55.00, 165.00),   
+(21, 21, 1, 300.00, 300.00),  
+(22, 22, 1, 95.00, 95.00),    
+(23, 23, 4, 4.00, 16.00),     
+(24, 24, 1, 80.00, 80.00),    
+(25, 25, 2, 28.00, 56.00),    
+(26, 26, 1, 250.00, 250.00),  
+(27, 27, 1, 150.00, 150.00),  
+(28, 28, 1, 110.00, 110.00),  
+(29, 29, 1, 30.00, 30.00),    
+(30, 30, 2, 38.00, 76.00),    
+(31, 31, 1, 700.00, 700.00),  
+(32, 32, 1, 85.00, 85.00),    
+(33, 33, 2, 40.00, 80.00),    
+(34, 34, 1, 48.00, 48.00),    
+(35, 35, 1, 190.00, 190.00),  
+(36, 36, 3, 25.00, 75.00),   
+(37, 37, 1, 280.00, 280.00), 
+(38, 38, 1, 90.00, 90.00),    
+(39, 39, 1, 130.00, 130.00),  
+(40, 40, 1, 100.00, 100.00),  
+(41, 41, 1, 1400.00, 1400.00),
+(42, 42, 1, 450.00, 450.00),  
+(43, 43, 2, 18.00, 36.00),    
+(44, 44, 1, 30.00, 30.00),    
+(45, 45, 1, 220.00, 220.00),  
+(46, 46, 1, 400.00, 400.00), 
+(47, 47, 1, 900.00, 900.00),  
+(48, 48, 1, 380.00, 380.00),  
+(49, 49, 1, 350.00, 350.00),  
 (50, 50, 1, 180.00, 180.00);
--- Avaliações dos clientes aos produtos
+
 INSERT INTO Avaliacao (ID_Cliente, ID_Produto, Data_Avaliacao, Nota, Comentario) VALUES
 (1, 1, '2025-06-11', 5, 'Excelente celular!'),
 (2, 2, '2025-06-11', 4, 'Camisa de boa qualidade.'),
@@ -537,8 +538,7 @@ JOIN ItemPedido ip ON p.ID_Produto = ip.ID_Produto
 GROUP BY c.Nome
 ORDER BY Valor_Total_Vendas DESC;
 
--- Criação de Usuários e Controle de Acesso
--- 1. Criação do Usuário Admin
+-- criacao de usuarios e privilegios
 CREATE USER admin_user WITH PASSWORD 'Vagalinha';
 
 GRANT ALL PRIVILEGES ON DATABASE ecomerce TO admin_user;
@@ -550,7 +550,8 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO admin_user;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO admin_user;
 GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public TO admin_user;
 
--- 2. Criação do Usuário Somente Leitura
+GRANT SELECT ON Total_Vendas_Por_Categoria TO admin_user;
+
 CREATE USER readonly_user WITH PASSWORD 'Vagalinha';
 
 GRANT CONNECT ON DATABASE ecomerce TO readonly_user;
@@ -562,6 +563,7 @@ GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO readonly_user;
 
 GRANT SELECT ON detalhes_pedidos_com_cliente TO readonly_user;
 GRANT SELECT ON Produtos_Em_Promocao_Com_Categoria TO readonly_user;
+GRANT SELECT ON Total_Vendas_Por_Categoria TO readonly_user;
 
 ALTER DEFAULT PRIVILEGES FOR USER readonly_user IN SCHEMA public GRANT SELECT ON TABLES TO readonly_user;
 ALTER DEFAULT PRIVILEGES FOR USER readonly_user IN SCHEMA public GRANT SELECT ON SEQUENCES TO readonly_user;
