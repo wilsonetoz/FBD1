@@ -75,7 +75,7 @@ class ProdutoEmPromocao(BaseModel):
 class TotalVendasPorCategoria(BaseModel):
     Nome_Categoria: str
     Valor_Total_Vendas: float
-    Quantidade_Total_Vendida: int # Adicione esta linha
+    Quantidade_Total_Vendida: int
 
     class Config:
         orm_mode = True
